@@ -48,7 +48,7 @@ public class SeaCacheServiceImpl implements SeaCacheService, BeanFactoryAware {
     }
 
     @Override
-    @Cacheable
+    @Cacheable(value = "sea-obstacles")
     public Set<String> updateObstacles(Coordinate coordinate) {
         var cache = beanFactory.getBean(SeaCacheService.class)
                 .getSeaObstacles();
